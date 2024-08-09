@@ -1,0 +1,59 @@
+// Img_url
+$imgUrl: "/public/img/";
+// Breakpoints
+$xl: 1530px;
+$lg: 1280px;
+$md: 1024px;
+$xs: 540px;
+// Colors
+$greenDark: #0e7f2d;
+$greenLight: #8cc64b;
+$greenVeryLight: #bdda4a;
+$green: #6ea431;
+$secondary-green: #89cb3f;
+$white: #fff;
+$textColor: #333;
+$blue: #006bb3;
+$transition: all 0.3s;
+$gray: #c4c4c4;
+$gray1: #333;
+$gray2: #4f4f4f;
+$gray3: #828282;
+$gray4: #bdbdbd;
+$red: #eb5757;
+$yellow: #d9d21d;
+$btnHover: #3f8e00;
+$mainGray: #becae2;
+%point {
+    @media (min-width: 1024px) {
+        pointer-events: none;
+    }
+}
+%center {
+    position: relative;
+    max-width: 1550px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @media (max-width: $xl) {
+        padding: 0 40px;
+        max-width: 1286px;
+    }
+    @media (max-width: $lg) {
+        padding: 0 60px;
+        max-width: 1024px;
+    }
+    @media (max-width: 600px) {
+        padding: 0 20px;
+    }
+    @media (max-width: $xs) {
+        padding: 0 20px;
+        max-width: 540px;
+    }
+}
+%stretch {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
