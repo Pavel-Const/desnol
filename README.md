@@ -1,36 +1,36 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Старт
 
-First, run the development server:
+Запус дева
+ - npm start
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Реализовано
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Страница логина
+1. Простая валидация на обязательные поля
+2. Сохранение в localstorage или sessionstorage в зависимости от того вчекнут ли чекбокс "Запомнить меня"
+3. Возможность показать пароль
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Страница обращений
+1. Хедер меняется в зависимости от тога зареган ли посетитель
+2. Фильты обращений
+3. Пагинация
+4. Вывод обращений из мок-файла
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Детальная обращения 
+1. Вывод обращения из мок-файла обращений по id
+2. Кнопка "Назад" на предыдущую страницу
+3. Возможность развернуть обращение
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## ToDo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Страница логина
+1. Реализация авторизации и регистрации
+2. Функционал кнопки "Забыли пароль"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Страница обращений
+1. Поиск обращений через инпут поиска
+2. Сортировка обращений по колонкам
+3. Логику добавления нового обращения

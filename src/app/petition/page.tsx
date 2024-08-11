@@ -1,6 +1,6 @@
 "use client";
 import styles from "./page.module.scss";
-import {useState} from "react";
+import {useCallback, useMemo, useState} from "react";
 import {petitions} from "@/app/petition/mockPetition";
 import Button from "@/component/ui/Button";
 import cn from "classnames";
@@ -14,10 +14,10 @@ export default function Petitions() {
     const [searchValue, setSearchValue] = useState("");
     const itemsPerPage = 7;
     
-    const handleFilterClick = (filter: string) => {
+    const handleFilterClick = useCallback((filter: string) => {
         setActiveFilter(filter);
         setCurrentPage(1);
-    };
+    }, []);
     
     const getFilteredData = () => {
         if (activeFilter === "Все") {
@@ -35,8 +35,9 @@ export default function Petitions() {
         return petitions;
     };
     
-    const filteredData = getFilteredData();
-    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+    const filteredData = useMemo(() => getFilteredData(), [activeFilter, petitions]);
+    
+    const totalPages = useMemo(() => Math.ceil(filteredData.length / itemsPerPage), [filteredData.length, itemsPerPage]);
     
     const renderTableRows = () => {
         const startIndex = (currentPage - 1) * itemsPerPage;
