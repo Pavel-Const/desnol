@@ -3,3 +3,33 @@
     align-items: center;
     gap: 10px;
 }
+.checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+}
+.checkbox:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #dedede;
+    
+}
+.checkbox:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 11px;
+    border: solid #08cce5;
+    border-width: 0 2px 2px 0;
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 8px;
+}

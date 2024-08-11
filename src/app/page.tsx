@@ -15,7 +15,7 @@ export default function Home() {
     if (!context) {
         throw new Error('Header must be used within an AuthProvider');
     }
-    const { auth, toggleAuth } = context;
+    const {toggleAuth, saveToSessionStorage, saveToLocalStorage} = context;
     const router = useRouter();
     const [checkRemember, setCheckRemember] = useState(false)
     const formik = useFormik({
@@ -25,8 +25,10 @@ export default function Home() {
         },
         validate: validateForm,
         onSubmit: values => {
-            console.log(values);
-            router.push('/petition');
+            
+            toggleAuth();
+            checkRemember ? saveToLocalStorage() : saveToSessionStorage();
+            router.push("/petition");
         }
     });
     return (
@@ -34,18 +36,22 @@ export default function Home() {
             <form className={styles.loginForm} onSubmit={formik.handleSubmit}>
                 <div className={styles.title}>Вход в сервис</div>
                 <div className={styles.fields}>
-                    <Input placeholder={"Логин"} name={'login'} type={'text'}
+                    <Input placeholder={"Логин"} name={"login"} type={"text"}
                            onChange={formik.handleChange}
                            value={formik.values.login}
-                           onBlur={formik.handleBlur}/>
-                    <Input placeholder={"Пароль"} name={'password'} type={'password'}
+                           onBlur={formik.handleBlur}
+                           error={formik.errors.login}
+                    />
+                    <Input placeholder={"Пароль"} name={"password"} type={"password"}
                            onChange={formik.handleChange}
                            value={formik.values.password}
                            onBlur={formik.handleBlur}
+                           error={formik.errors.password}
                     />
                 </div>
-                <CheckBox label={"Запомнить меня"} isChecked={checkRemember} setCheck={setCheckRemember} className={styles.checkbox}/>
-                <Button type={'submit'} className={styles.buttonEnter} onClick={toggleAuth}>Войти</Button>
+                <CheckBox label={"Запомнить меня"} isChecked={checkRemember} setCheck={setCheckRemember}
+                          className={styles.checkbox}/>
+                <Button type={"submit"} className={styles.buttonEnter} variant={"black"}>Войти</Button>
             </form>
             <button className={styles.button}>Забыли пароль?</button>
         </main>

@@ -1,0 +1,104 @@
+.main {
+    margin-top: 20px;
+}
+.btnBack {
+    width: 150px;
+    height: 40px;
+}
+.content {
+    margin-top: 30px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    
+}
+.block {
+    display: flex;
+    gap: 50px;
+}
+.column {
+    width: 65%;
+}
+.number {
+    font-size: 15px;
+    color: #4f4f4f;
+}
+.label {
+    margin-top: 10px;
+    font-size: 25px;
+    color: black;
+}
+.description {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
+.columnLeft {}
+.status {
+    font-size: 15px;
+    color: #333;
+}
+.box {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    &__name {
+        font-size: 15px;
+        color: #4f4f4f;
+    }
+    &__value {
+        font-size: 20px;
+        color: #333;
+    }
+}
+.showMoreBtn {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 0 0 25px 25px;
+    svg{
+        width: 30px;
+        height: 30px;
+    }
+    &_rotate{
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+}
+.showMore {
+
+}
+.service {
+    margin-top: 10px;
+    font-size: 25px;
+    color: black;
+}
+.comService {
+    margin-top: 10px;
+    font-size: 25px;
+    color: black;
+}
+.tool{
+    margin: 80px auto 0;
+    width: 80%;
+    background-color: #d9b3b3;
+    padding: 10px 50px;
+    font-size: 15px;
+}

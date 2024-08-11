@@ -2,9 +2,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-size: 15px;
+    line-height: 20px;
+}
+.black{
     color: white;
     background-color: #4f4f4f;
-    border-radius: 20px;
-    font-size: 25px;
-    line-height: 30px;
+}
+.blackPlus{
+    color: white;
+    background-color: #4f4f4f;
+}
+.white{
+    color: #4f4f4f;
+    background-color: white;
+}
+.active{
+    color: white;
+    background-color: #08cce5;
 }
